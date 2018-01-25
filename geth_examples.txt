@@ -1,0 +1,60 @@
+"0x0a1c92bd32c402160525c2b3161e67a0d1531143d66446a13653e996100270df"
+
+0x3684f071b34da1116282ee88a106a8f2a266d273ef7d8964957f65128fb58d77
+
+x515629417c 5b882446490b0bc8370d090c0d
+0x5c0438a3f4dc821e1a6ac191c09912e8dc9d1381743a1269304b10456ece640b
+
+ curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{ "jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["0x67e356eb2867ae23f746a59b4ee8b428a43731f67de1bc213c3c4c7db1f08a6f", {"disableStack": true, "disableMemory": true, "disableStorage": true}], "id":1}'
+
+"Block(#50195): Size: 786.00 B {\nMinerHash: 022fc7fe26a340a374da90c9e4cbbe192189c0d867f46a8de54b9cfe9bb4daa8\nHeader(5ca6bb464c959abcdddf972b3df6a349adf1ff55b8576846b055f37904731278):\n[\n\tParentHash:\t    9dc3064e0aab6cc4da59433d28eb9859253459bf37aef9faf23fcfd8ebf758f1\n\tUncleHash:\t    1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347\n\tCoinbase:\t
+   5f8f73e26cdf436f19cb24c82f90a15afe55b592\n\tRoot:\t\t    a7d50b377866374d8bdb19e25a9ee6eaf5608afce07e7bb4f9097309b8d84ef1\n\tTxSha\t\t    dda91a8d1a4e2be4ddf75ed6fa9d3f0c7f8562a85155d8594d3058555746d17d\n\tReceiptSha:\t    417b92408a3597724de7004ab9bb1a6aa1024b9b1659ff00f286b66fb61c8a68\n\tBloom:\t\t    00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\n\tDifficulty:\t    1514163121940\n\tNumber:\t\t    50195\n\tGasLimit:\t    351835\n\tGasUsed:\t    43224\n\tTime:\t\t    1438985285\n\tExtra:\t\t    Geth/v1.0.1/windows/go1.4.2\n\tMixDigest:      d9b5396512f529d7d027a750282aace6134d770049c840c73e13dfd035405191\n\tNonce:\t\t    2d7bbac1eb88c22a\n]\nTransactions:\n[\n\tTX(40463c6d40f75f3aa044d890cfaa7921f0787139fa7765986ca2d5faf5ee2990)\n\tContract: false\n\tFrom:
+  2a59e47ea5d8f0e7c028a3e8e093a49c1b50b9a3\n\tTo:       2910543af39aba0cd09dbb2d50200b3e800a63d2\n\tNonce:    0\n\tGasPrice: 0x110c8f7d8de\n\tGasLimit  0xc350\n\tValue:    0x56bc75e2d63100000\n\tData:     0x454e344136334a4b30\n\tV:        0x1b\n\tR:        0xbc9dc3d330ad27352e3b97047c865314cebca48dd79fdb4637a4c062f7f41fa9\n\tS:        0x577e4c4a77c6386e4274a74def514171d4be2a5169f79e18c9e4de12c3bac78c\n\tHex:      f87780860110c8f7d8de82c350942910543af39aba0cd09dbb2d50200b3e800a63d289056bc75e2d6310000089454e344136334a4b301ba0bc9dc3d330ad27352e3b97047c865314cebca48dd79fdb4637a4c062f7f41fa9a0577e4c4a77c6386e4274a74def514171d4be2a5169f79e18c9e4de12c3bac78c\n \n\tTX(0cb8f22d8fde6ddc0c0c1bfb2872d6ded763f5201d5bac2a043aaa556cea7ba7)\n\tContract: false\n\tFrom:     4b3aab335ebbfaa870cc4d605e7d2e74c668369f\n\tTo:       2910543af39aba0cd09dbb2d50200b3e800a63d2\n\tNonce:    0\n\tGasPrice: 0xd4a755a42\n\tGasLimit  0x55f0\n\tValue:    0xde0b6b3a7640000\n\tData:     0x454e3631474a334452\n\tV:
+        0x1c\n\tR:        0x3f4bace7cfeef6ceaaf7b64e5e33987c42c3276e090edddc5388f15b7846756f\n\tS:        0x22a3ba778025425876d01ee0413353ce902b5b0f0be6a16009ea778c3b262e8c\n\tHex:
+f87580850d4a755a428255f0942910543af39aba0cd09dbb2d50200b3e800a63d2880de0b6b3a764000089454e3631474a3344521ca03f4bace7cfeef6ceaaf7b64e5e33987c42c3276e090edddc5388f15b7846756fa022a3ba778025425876d01ee0413353ce902b5b0f0be6a16009ea778c3b262e8c\n]\nUncles:\n[]\n}\n"
+
+(50195)
+
+
+
+geth -- exec 'loadScript("/home/uoft/ethereum/testing/traceBlock.js")' attach ipc:/home/uoft/ethereum/testing/01/geth.ipc  > ~/ethereum/testing/traceBlocklog.js
+
+debug.traceTransaction("0x3dc26dc3b5803157626b03fa3b24d1a2de9301326d1cc513d2f5ce33827ccb42", {tracer: '{data: [], step: function(log) { if(log.op.toString() == "CALL") this.data.push(log.stack.peek(0)); }, result: function() { return this.data; }}'});
+
+debug.traceTransaction("0x3dc26dc3b5803157626b03fa3b24d1a2de9301326d1cc513d2f5ce33827ccb42", {tracer: '{data: [], step: function(log) {}, result: function() { return this.data;  }}'});
+
+debug.traceTransaction("0x3dc26dc3b5803157626b03fa3b24d1a2de9301326d1cc513d2f5ce33827ccb42", {tracer: '{data: [], step: function(log) {this.logs.append({op: log.op}); }, result: function() {return this.logs; }}'});
+
+opcode=$(curl localhost:8545 -X POST --header 'Content-type: application/json' --data '{ "jsonrpc":"2.0", "method":"debug_traceTransaction", "params":["0x67e356eb2867ae23f746a59b4ee8b428a43731f67de1bc213c3c4c7db1f08a6f", {"disableStack": true, "disableMemory": true, "disableStorage": true}], "id":1}')
+
+ curl localhost:8545 -X POST --header 'Content-type:application/json' --data '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x64",true],id:1}'
+ 
+ {"blocks":[{"blockNumber":556001,"blockHash":"0x814a3696ba2a16a3566c6b17a4d4876397daad1f9d413b646e9c8acec6fb530f","blockSize":543,"timeStamp":1447787174,"difficulty":3134670084272208259,"nonce":"0x42796ce6353ce885","miner":"0xf8b483dba2c3b7176a3da549ad41a48bb3121069","gasLimit":3141592,"gasUsed":0,"numberofTransactions":0},{"blockNumber":556002,"blockHash":"0x23bd754f27eb0a0d3b1cf73ad5976327d53b28cddba83bd9aecee702d84fad0d","blockSize":659,"timeStamp":1447787190,"difficulty":3134678307869178609,"nonce":"0xeb13d391ef30726d","miner":"0xf8b483dba2c3b7176a3da549ad41a48bb3121069","gasLimit":3141592,"gasUsed":21000,"numberofTransactions":1,"ContractTransactions":0,"transactions":{"transactionHash":"0xcfc0d7c00f237d9712f86059166d0867664bc48eb5ce49946c2d6ca9b27045f4","numberofLogs":0}}]}
+
+sed 's/{"transactionHash"/"transactions":{"transactionHash"/' blTransOp_670001-672000.json
+
+adding to the first:
+sed -i '1s/^/{"results":[/' blTransOp_556001-556197.json
+ 
+removing from the end:
+truncate -s-2 blTransOp_556001-556197.json
+
+adding to the end:
+echo "]}"  >>  blTransOp_556001-556197.json
+
+ sed -i '1s/^/{"results":[/' blTransOp_556001-556197.json && truncate -s-7 blTransOp_556001-556197.json && echo "]}"  >>  blTransOp_556001-556197.json
+
+sed 's/blTransOp(0,10000)/blTransOp(556001,556197)/' blTransOp_0-10000.js >   blTransOp_556001-556197.js && geth --exec 'loadScript("/home/uoft/ethereum/testing/jsons/blTransOp_556001-556197.js")' attach ipc:/home/uoft/ethereum/testing/00/geth.ipc > /home/uoft/ethereum/testing/jsons/blTransOp_556001-556197.json && rm blTransOp_556001-556197.js && sed -i '1s/^/{"results":[/' blTransOp_556001-556197.json && truncate -s-7 blTransOp_556001-556197.json && echo "]}"  >>  blTransOp_556001-556197.json
+
+ geth --exec 'loadScript(/home/uoft/ethereum/testing/jsons/blTransOp_1000-1099.js)' attach ipc:/home/uoft/ethereum/testing/00/geth.ipc > /home/uoft/ethereum/testing/jsons/blTransOp_1000-1099.json
+
+##################  
+for i in {0..1000..100};  do STARTL=$i; ENDL=$[$i+99]; FILE="blTransOp_${STARTL}-${ENDL}"; DIR="/home/uoft/ethereum/testing"; sed "s/blTransOp(0,10000)/blTransOp($STARTL,$ENDL)/" blTransOp_0-10000.js > blTransOp.js && geth --exec 'loadScript("/home/uoft/ethereum/testing/jsons/blTransOp.js")' attach ipc:$DIR/00/geth.ipc > $DIR/jsons/$FILE.json && sed -i '1s/^/{"results":[/' $FILE.json && truncate -s-7 $FILE.json && echo "]}"  >>  $FILE.json ; done
+################ 
+
+ for i in {1..1000};  do  BLOCK=$i; BLOCKNO="0x"`echo  "obase=16; ${BLOCK}" | bc`; BLOCKHX=`echo "\""$BLOCKNO"\""`; BLOCKDATA=$(curl localhost:854 5 -X POST --header 'Content-type: application/ json' --data '{"jsonrpc":"2.0","method":"eth_g etBlockByNumber","params":[$BLOCKNOQ, true],"i d":1}'); echo ${BLOCKDATA}; done
+ 
+sed 's /blTransOp(0,10000)/blTransOp(556001,556197)/'  blTransOp_0-10000.js >   blTransOp_556001-556 197.js && geth --exec 'loadScript("/home/uoft/ ethereum/testing/jsons/blTransOp_556001-556197 .js")' attach ipc:/home/uoft/ethereum/testing/ 00/geth.ipc > /home/uoft/ethereum/testing/json s/blTransOp_556001-556197.json && rm blTransOp _556001-556197.js ;
+ 
+geth - -exec 'loadScript("/home/uoft/ethereum/testing /jsons/blTransOp_556001-556197.js")' attach ip c:/home/uoft/ethereum/testing/00/geth.ipc > /h ome/uoft/ethereum/testing/jsons/blTransOp_5560 01-556197.json
+uoft@Ethereum:~/ethereum/testing/jsons$
