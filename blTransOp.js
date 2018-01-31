@@ -82,5 +82,3 @@ function blTransOp(startBlockNumber, endBlockNumber) {
 		console.log(str);
 	}
 }
-
-blTransOp(0,10000)
