@@ -1,3 +1,0 @@
-#!/bin/bash
-
-for i in {900000..1000000..1000};  do STARTL=$i; ENDL=$[$i+999]; FILE=blTransOp_$STARTL-$ENDL; DIR="/home/uoft/ethereum/testing"; sed "s/blTransOp(0,10000)/blTransOp($STARTL,$ENDL)/" blTransOp_0-10000.js > blTransOp.js && geth --exec 'loadScript("/home/uoft/ethereum/testing/jsons/blTransOp.js")' attach ipc:$DIR/00/geth.ipc > $DIR/jsons/$FILE.json && sed -i '1s/^/{"results":[/' $FILE.json && truncate -s-7 $FILE.json && echo "]}"  >>  $FILE.json ; done
