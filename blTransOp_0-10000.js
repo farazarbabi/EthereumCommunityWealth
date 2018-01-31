@@ -1,3 +1,5 @@
+//Javascript to exctract block data, transaction data and history of opcodes based on Ethereum start and end block numbers
+
 function isEmpty(obj) {
     for(var key in obj) {
         if(obj.hasOwnProperty(key))
@@ -7,7 +9,8 @@ function isEmpty(obj) {
 }
 
 function blTransOp(startBlockNumber, endBlockNumber) {
-    
+	
+//outer loop to trace each block data	
   for (var i = startBlockNumber; i <= endBlockNumber; i++) {
   var bltransCount = eth.getBlockTransactionCount(i);
     
@@ -27,6 +30,7 @@ function blTransOp(startBlockNumber, endBlockNumber) {
 			var transstr = [];
 			var transdata1 = [];
 			var count = 0;
+		//middle loop to trace transactions
 		for (var j = 0 ; j < bltransCount; j++){
 			
 			var txH = bl.transactions[j];
@@ -39,7 +43,7 @@ function blTransOp(startBlockNumber, endBlockNumber) {
 			var transdata1 = ['"transactions":{'  +  '"transactionHash":"' + txH + '","numbrofLogs":'  + numLogs];
 				if(numLogs > 0){
 				count = count+1;
-
+			//inner loop to trace history of opcodes, etc.
 			for (var k = 0 ; k < numLogs; k++){
 				transdata2 = ['{"pc":' + dbug.structLogs[k].pc  
 				+ ',"op":' + '"' + dbug.structLogs[k].op + '"' 
